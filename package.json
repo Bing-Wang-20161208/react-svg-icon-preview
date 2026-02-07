@@ -1,0 +1,96 @@
+{
+  "name": "react-svg-preview",
+  "displayName": "React SVG Preview",
+  "description": "Preview React SVG icon components with inline gutter icons and hover preview. Supports forwardRef, memo, arrow functions, and raw .svg files.",
+  "version": "0.1.0",
+  "publisher": "AnyPublisher",
+  "license": "MIT-0",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "icon": "icon.png",
+  "keywords": [
+    "svg",
+    "react",
+    "icon",
+    "preview",
+    "inline",
+    "hover",
+    "gutter",
+    "forwardRef",
+    "jsx",
+    "tsx"
+  ],
+  "categories": [
+    "Other",
+    "Visualization"
+  ],
+  "activationEvents": [
+    "onLanguage:typescriptreact",
+    "onLanguage:javascriptreact",
+    "onLanguage:typescript",
+    "onLanguage:javascript",
+    "onLanguage:xml",
+    "onLanguage:svg"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "reactSvgPreview.toggle",
+        "title": "Toggle React SVG Preview"
+      },
+      {
+        "command": "reactSvgPreview.refresh",
+        "title": "Refresh React SVG Preview"
+      }
+    ],
+    "configuration": {
+      "title": "React SVG Preview",
+      "properties": {
+        "reactSvgPreview.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable or disable the SVG preview"
+        },
+        "reactSvgPreview.iconSize": {
+          "type": "number",
+          "default": 16,
+          "description": "Size of the inline icon preview in pixels"
+        },
+        "reactSvgPreview.showInlineIcon": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show inline icon in the gutter"
+        },
+        "reactSvgPreview.showHoverPreview": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show hover preview when hovering over SVG components"
+        },
+        "reactSvgPreview.hoverPreviewSize": {
+          "type": "number",
+          "default": 128,
+          "description": "Size of the hover preview in pixels"
+        },
+        "reactSvgPreview.defaultFillColor": {
+          "type": "string",
+          "default": "#888888",
+          "description": "Default fill color for currentColor"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^2.22.0",
+    "typescript": "^5.3.0"
+  }
+}
